@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrtoInfecto 2026 | Onde Ortopedia encontra Infectologia</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Phosphor Icons para ícones minimalistas -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            offwhite: '#F9F9F9',
+                            gray: '#a3a3a3',
+                            darkgray: '#262626',
+                            green: '#125b38', // Verde institucional
+                            lightgreen: '#228B22' // Verde secundário para detalhes
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        tighter: '-0.04em',
+                        widest: '0.15em'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #F9F9F9;
+            color: #0a0a0a;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        /* Ocultar scrollbar horizontal */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Animações de Scroll (Motion) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Acordeão (Sanfona) minimalista */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1), opacity 0.5s ease-out, padding 0.5s ease;
+            opacity: 0;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            opacity: 1;
+            padding-bottom: 1.5rem;
+            transition: max-height 1s ease-in-out, opacity 0.5s ease-out, padding 0.5s ease;
+        }
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+            color: #125b38;
+        }
+
+        /* Linhas finas editoriais */
+        .hairline-b { border-bottom: 1px solid rgba(10, 10, 10, 0.1); }
+        .hairline-t { border-top: 1px solid rgba(10, 10, 10, 0.1); }
+        
+        /* Logo Filter */
+        .logo-inverted {
+            filter: brightness(0) invert(1);
+            transition: filter 0.4s ease;
+        }
+        .navbar-scrolled .logo-inverted {
+            filter: none;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-brand-green selection:text-white">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-6">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 flex justify-between items-center">
+            
+            <!-- Logo Oficial (Imagem) -->
+            <a href="#" class="z-10 flex items-center" onclick="window.scrollTo(0,0)">
+                <img src="assets/logo.png" alt="OrtoInfecto Logo" class="h-8 md:h-10 w-auto object-contain logo-inverted nav-text-element" id="main-logo">
+            </a>
+            
+            <!-- Menu Desktop -->
+            <div class="hidden md:flex space-x-12 text-xs font-semibold tracking-widest uppercase text-white mix-blend-difference z-10 nav-text-element">
+                <a href="#evento" class="hover:text-brand-green transition-colors">O Evento</a>
+                <a href="#convidados" class="hover:text-brand-green transition-colors">Convidados</a>
+                <a href="#programa" class="hover:text-brand-green transition-colors">Programa</a>
+                <a href="#patrocinadores" class="hover:text-brand-green transition-colors">Patrocinadores</a>
+            </div>
+
+            <!-- CTA -->
+            <div class="hidden md:block z-10">
+                <a href="#inscricao" class="text-xs font-bold tracking-widest uppercase text-white mix-blend-difference hover:text-brand-green transition-colors flex items-center gap-2 nav-text-element">
+                    Inscreva-se <i class="ph-bold ph-arrow-up-right"></i>
+                </a>
+            </div>
+
+            <!-- Menu Mobile Toggle -->
+            <button class="md:hidden text-white mix-blend-difference z-10 nav-text-element">
+                <i class="ph ph-list text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative w-full min-h-screen flex flex-col justify-between bg-brand-black overflow-hidden">
+        <!-- Background Image Cover -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=1920&auto=format&fit=crop" alt="OrtoInfecto Hero" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-brand-black"></div>
+        </div>
+
+        <!-- Top Spacer -->
+        <div class="relative z-10 pt-40"></div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-[90rem] mx-auto px-6 md:px-12 w-full pb-16 md:pb-24">
+            <h1 class="reveal text-white text-5xl md:text-7xl lg:text-[7.5rem] font-light tracking-tighter leading-[0.95] mb-12">
+                Onde a Ortopedia<br>encontra a <span class="text-brand-green italic font-normal">Infectologia.</span>
+            </h1>
+            
+            <div class="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 border-t border-white/20 pt-8 reveal reveal-delay-1">
+                
+                <!-- Informações e Contador -->
+                <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+                    <div class="text-white/80 font-medium tracking-widest uppercase text-xs space-y-2">
+                        <p>11—12 Dezembro 2026</p>
+                        <p>Hotel Meliá Ibirapuera · São Paulo</p>
+                    </div>
+                    
+                    <!-- Contador Tipográfico Premium -->
+                    <div class="flex gap-6 md:gap-10 text-white" id="countdown">
+                        <div class="flex flex-col">
+                            <span class="text-4xl md:text-5xl font-light tracking-tighter" id="cd-days">00</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-green mt-1">Dias</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-4xl md:text-5xl font-light tracking-tighter" id="cd-hours">00</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-green mt-1">Horas</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-4xl md:text-5xl font-light tracking-tighter" id="cd-mins">00</span>
+                            <span class="text-[10px] font-bold tracking-widest uppercase text-brand-green mt-1">Minutos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CTA Hero -->
+                <a href="#inscricao" class="group flex items-center gap-4 text-white hover:text-brand-green text-sm md:text-base uppercase tracking-widest font-bold transition-colors">
+                    <span>Garantir Inscrição</span>
+                    <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:border-brand-green group-hover:bg-brand-green group-hover:text-white transition-all duration-300">
+                        <i class="ph-bold ph-arrow-right text-xl"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 md:py-48 bg-brand-offwhite">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <h2 class="reveal text-3xl md:text-5xl lg:text-6xl font-light tracking-tighter text-brand-black leading-tight max-w-5xl">
+                Dois dias para discutir aquilo que acontece quando a infecção muda o curso de uma decisão ortopédica.
+            </h2>
+            <div class="reveal reveal-delay-1 mt-12 md:mt-20 max-w-2xl text-brand-darkgray text-lg md:text-xl font-light leading-relaxed">
+                <p>Infecções musculoesqueléticas não cabem em uma única especialidade. É na interseção exata entre diagnóstico, microbiologia, cirurgia e infectologia que as decisões mais complexas e definitivas acontecem na prática clínica.</p>
+                <p class="mt-8 text-brand-green font-bold tracking-widest uppercase text-xs">Ortopedia × Infectologia</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="evento" class="py-24 bg-brand-offwhite hairline-t">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+                
+                <div class="lg:w-2/5 reveal">
+                    <div class="sticky top-32">
+                        <span class="text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">01 / O OrtoInfecto</span>
+                        <h3 class="text-3xl md:text-5xl font-light tracking-tighter text-brand-black leading-tight">
+                            O conhecimento que você leva para a prática.
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="lg:w-3/5">
+                    <p class="reveal text-xl md:text-2xl font-light leading-relaxed text-brand-darkgray mb-16">
+                        O evento traduz a ciência global (EBJIS, ECCMID) para a realidade do centro cirúrgico. Uma experiência desenhada para profissionais que não aceitam condutas superficiais.
+                    </p>
+
+                    <!-- Lista Editorial Dinâmica -->
+                    <div class="flex flex-col">
+                        <div class="reveal hairline-t py-8 flex justify-between items-center group cursor-default">
+                            <span class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green group-hover:translate-x-4 transition-all duration-300">Diagnóstico Intraoperatório</span>
+                            <span class="text-xs font-semibold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">01</span>
+                        </div>
+                        <div class="reveal hairline-t py-8 flex justify-between items-center group cursor-default">
+                            <span class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green group-hover:translate-x-4 transition-all duration-300">Prevenção e Biofilmes</span>
+                            <span class="text-xs font-semibold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">02</span>
+                        </div>
+                        <div class="reveal hairline-t py-8 flex justify-between items-center group cursor-default">
+                            <span class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green group-hover:translate-x-4 transition-all duration-300">Tratamento Cirúrgico e Clínico</span>
+                            <span class="text-xs font-semibold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">03</span>
+                        </div>
+                        <div class="reveal hairline-t py-8 flex justify-between items-center group cursor-default">
+                            <span class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green group-hover:translate-x-4 transition-all duration-300">Resolução de Casos Complexos</span>
+                            <span class="text-xs font-semibold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">04</span>
+                        </div>
+                        <div class="hairline-t"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-brand-green text-white py-32">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+                
+                <div class="reveal flex flex-col">
+                    <span class="text-6xl md:text-8xl font-light tracking-tighter mb-2">02</span>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-white/70">Dias de Imersão</span>
+                </div>
+                
+                <div class="reveal reveal-delay-1 flex flex-col">
+                    <span class="text-6xl md:text-8xl font-light tracking-tighter mb-2">+40</span>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-white/70">Especialistas</span>
+                </div>
+                
+                <div class="reveal reveal-delay-2 flex flex-col">
+                    <span class="text-6xl md:text-8xl font-light tracking-tighter mb-2">+15</span>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-white/70">Casos Clínicos Reais</span>
+                </div>
+                
+                <div class="reveal reveal-delay-3 flex flex-col">
+                    <span class="text-6xl md:text-8xl font-light tracking-tighter mb-2">01</span>
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-white/70">Encontro Exclusivo</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="convidados" class="py-32 md:py-40 bg-brand-offwhite overflow-hidden">
+        <div class="reveal max-w-[90rem] mx-auto px-6 md:px-12 mb-16">
+            <span class="text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">02 / Convidados 2026</span>
+            <h2 class="text-4xl md:text-6xl font-light tracking-tighter">Quem está na conversa.</h2>
+        </div>
+
+        <!-- Container de Scroll Horizontal -->
+        <div class="flex overflow-x-auto hide-scrollbar gap-8 px-6 md:px-12 pb-12 snap-x snap-mandatory cursor-grab active:cursor-grabbing" id="slider">
+            
+            <!-- Palestrante 1: Prof. Dr. Mauro J. C. Salles -->
+            <div class="reveal snap-start shrink-0 w-[75vw] md:w-[350px] group">
+                <div class="w-full aspect-[3/4] mb-6 overflow-hidden bg-brand-gray/10 relative rounded-sm">
+                    <img src="assets/mauro-salles.png" alt="Prof. Dr. Mauro J. C. Salles" class="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                </div>
+                <h4 class="text-2xl font-medium tracking-tighter mb-1">Prof. Dr. Mauro J. C. Salles</h4>
+                <p class="text-brand-darkgray font-light text-sm">Chefe do Grupo OrtoInfecto<br>Infectologia DOT-EPM-UNIFESP</p>
+            </div>
+
+            <!-- Palestrante 2: Dr. Carlos Augusto Finelli -->
+            <div class="reveal reveal-delay-1 snap-start shrink-0 w-[75vw] md:w-[350px] group">
+                <div class="w-full aspect-[3/4] mb-6 overflow-hidden bg-brand-gray/10 relative rounded-sm">
+                    <img src="assets/carlos-finelli.png" alt="Dr. Carlos Augusto Finelli" class="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                </div>
+                <h4 class="text-2xl font-medium tracking-tighter mb-1">Dr. Carlos Augusto Finelli</h4>
+                <p class="text-brand-darkgray font-light text-sm">Vice-Chefe do Grupo OrtoInfecto<br>Trauma Ortopédico DOT-EPM-UNIFESP</p>
+            </div>
+
+            <!-- Palestrante 3: Prof. Dr. Fernando Baldy -->
+            <div class="reveal reveal-delay-2 snap-start shrink-0 w-[75vw] md:w-[350px] group">
+                <div class="w-full aspect-[3/4] mb-6 overflow-hidden bg-brand-gray/10 relative rounded-sm">
+                    <img src="assets/fernando-baldy.png" alt="Prof. Dr. Fernando Baldy" class="w-full h-full object-cover object-top filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                </div>
+                <h4 class="text-2xl font-medium tracking-tighter mb-1">Prof. Dr. Fernando Baldy</h4>
+                <p class="text-brand-darkgray font-light text-sm">Traumatologia e Ortopedia<br>DOT-EPM-UNIFESP</p>
+            </div>
+
+            <!-- Palestrante 4: Dr. Javad Parvizi -->
+            <div class="reveal reveal-delay-3 snap-start shrink-0 w-[75vw] md:w-[350px] group">
+                <div class="w-full aspect-[3/4] mb-6 overflow-hidden bg-brand-gray/10 relative rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop" alt="Dr. Javad Parvizi" class="w-full h-full object-cover filter grayscale contrast-105 group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                </div>
+                <h4 class="text-2xl font-medium tracking-tighter mb-1">Dr. Javad Parvizi</h4>
+                <p class="text-brand-darkgray font-light text-sm">Convidado Internacional<br>Referência Mundial</p>
+            </div>
+
+            <!-- Ver Todos -->
+            <div class="reveal snap-start shrink-0 w-[75vw] md:w-[350px] flex items-center justify-center border border-brand-black/10 hover:border-brand-green transition-colors cursor-pointer group">
+                <div class="text-center p-8">
+                    <span class="text-4xl font-light tracking-tighter mb-4 block">+20</span>
+                    <span class="text-[10px] uppercase tracking-widest font-bold group-hover:text-brand-green transition-colors">Corpo docente<br>completo</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="programa" class="py-24 md:py-40 bg-white hairline-t">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            <div class="reveal mb-16 md:mb-24 flex flex-col md:flex-row md:justify-between md:items-end gap-8">
+                <div>
+                    <span class="text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">03 / Programa Científico</span>
+                    <h2 class="text-4xl md:text-6xl font-light tracking-tighter text-brand-black">O que vamos discutir.</h2>
+                </div>
+                <p class="text-brand-darkgray max-w-sm font-light text-lg">Uma imersão técnica rigorosamente selecionada para os desafios atuais.</p>
+            </div>
+
+            <!-- Índice Acordeão -->
+            <div class="flex flex-col w-full hairline-t accordion-container">
+                
+                <div class="reveal accordion-item group cursor-pointer hairline-b">
+                    <div class="py-8 flex justify-between items-center pr-4">
+                        <div class="flex items-baseline gap-6 md:gap-12">
+                            <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">01</span>
+                            <h4 class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Dinâmica dos Biofilmes em Implantes</h4>
+                        </div>
+                        <i class="ph-light ph-plus text-2xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
+                    </div>
+                    <div class="accordion-content px-10 md:px-16 md:ml-12 max-w-3xl text-brand-darkgray font-light text-lg">
+                        Compreensão atualizada sobre a formação, resistência e estratégias mecânicas e químicas para a erradicação de biofilmes em próteses e sínteses.
+                    </div>
+                </div>
+
+                <div class="reveal accordion-item group cursor-pointer hairline-b">
+                    <div class="py-8 flex justify-between items-center pr-4">
+                        <div class="flex items-baseline gap-6 md:gap-12">
+                            <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">02</span>
+                            <h4 class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Osteomielites Modernas</h4>
+                        </div>
+                        <i class="ph-light ph-plus text-2xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
+                    </div>
+                    <div class="accordion-content px-10 md:px-16 md:ml-12 max-w-3xl text-brand-darkgray font-light text-lg">
+                        Manejo cirúrgico avançado, da limpeza cirúrgica (desbridamento) às técnicas de reconstrução óssea e cobertura de partes moles.
+                    </div>
+                </div>
+
+                <div class="reveal accordion-item group cursor-pointer hairline-b">
+                    <div class="py-8 flex justify-between items-center pr-4">
+                        <div class="flex items-baseline gap-6 md:gap-12">
+                            <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">03</span>
+                            <h4 class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Diagnóstico Microbiológico e NGS</h4>
+                        </div>
+                        <i class="ph-light ph-plus text-2xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
+                    </div>
+                    <div class="accordion-content px-10 md:px-16 md:ml-12 max-w-3xl text-brand-darkgray font-light text-lg">
+                        Do intraoperatório ao laboratório: como maximizar a positividade das culturas. O papel crescente do sequenciamento genético (Metagenômica/NGS).
+                    </div>
+                </div>
+
+                <div class="reveal accordion-item group cursor-pointer hairline-b">
+                    <div class="py-8 flex justify-between items-center pr-4">
+                        <div class="flex items-baseline gap-6 md:gap-12">
+                            <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">04</span>
+                            <h4 class="text-2xl md:text-4xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Antimicrobianos e Resistência</h4>
+                        </div>
+                        <i class="ph-light ph-plus text-2xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
+                    </div>
+                    <div class="accordion-content px-10 md:px-16 md:ml-12 max-w-3xl text-brand-darkgray font-light text-lg">
+                        Escolha empírica e dirigida. Tempo de tratamento. Como lidar com o aumento alarmante de superbactérias na ortopedia.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-offwhite">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12">
+            
+            <div class="reveal flex flex-col md:flex-row gap-8 mb-16 items-start">
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-5xl font-light tracking-tighter text-brand-black">
+                        Não é apenas assistir.<br>É estar dentro da discussão.
+                    </h2>
+                </div>
+                <div class="md:w-1/2 md:text-right">
+                    <span class="text-[10px] font-bold tracking-widest uppercase text-brand-gray">Registros Edição 2025</span>
+                </div>
+            </div>
+
+            <!-- Grid de Fotos Editorial -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 mb-24">
+                <div class="reveal md:col-span-8 aspect-[16/9] md:aspect-auto md:h-[600px] overflow-hidden bg-brand-gray rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=1200&auto=format&fit=crop" alt="Prática Microbiologia" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                
+                <div class="md:col-span-4 flex flex-col gap-4 md:gap-6">
+                    <div class="reveal reveal-delay-1 aspect-[4/3] md:h-[calc(300px-12px)] overflow-hidden bg-brand-gray rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=800&auto=format&fit=crop" alt="Auditório" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                    <div class="reveal reveal-delay-2 aspect-[4/3] md:h-[calc(300px-12px)] overflow-hidden bg-brand-gray rounded-sm">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=800&auto=format&fit=crop" alt="Networking" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Depoimento -->
+            <div class="reveal text-center max-w-5xl mx-auto py-16 hairline-t">
+                <h3 class="text-3xl md:text-4xl lg:text-5xl font-light tracking-tighter text-brand-black leading-tight italic mb-8">
+                    “Excelente evento. Muito rico em teoria e em prática. Temas atuais e debates enriquecedores que mudam a nossa visão no bloco cirúrgico e na tomada de decisão perante infecções complexas.”
+                </h3>
+                <p class="text-[10px] font-bold tracking-widest uppercase text-brand-green">Médico Ortopedista — Participante 2025</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="patrocinadores" class="py-24 bg-white hairline-t">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 text-center">
+            <span class="reveal text-[10px] font-bold tracking-widest uppercase text-brand-gray mb-16 block">Patrocinadores e Apoiadores</span>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 items-center justify-items-center opacity-70">
+                <img src="https://placehold.co/300x150/ffffff/000000?text=Biocomposites" class="reveal h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://placehold.co/300x150/ffffff/000000?text=LasForLife" class="reveal reveal-delay-1 h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://placehold.co/300x150/ffffff/000000?text=MundiPharma" class="reveal reveal-delay-2 h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://placehold.co/300x150/ffffff/000000?text=Ossis" class="reveal reveal-delay-3 h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+                <img src="https://placehold.co/300x150/ffffff/000000?text=SBOT" class="reveal h-8 md:h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300">
+            </div>
+        </div>
+    </section>
+
+    <section id="inscricao" class="py-32 md:py-48 bg-brand-black text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-green via-brand-black to-brand-black"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
+            <span class="reveal text-[10px] font-bold tracking-widest uppercase text-brand-green mb-8 block">OrtoInfecto 2026</span>
+            <h2 class="reveal text-5xl md:text-7xl lg:text-[6rem] font-light tracking-tighter leading-[0.9] mb-8">
+                Faça parte da conversa.
+            </h2>
+            <p class="reveal text-lg md:text-xl font-light text-white/70 mb-16 max-w-2xl mx-auto">
+                Dois dias de ciência, prática e troca entre os profissionais que lidam com infecções musculoesqueléticas no mais alto nível.
+            </p>
+            
+            <a href="#" class="reveal inline-flex items-center gap-4 bg-brand-green text-white px-8 py-5 md:px-12 md:py-6 hover:bg-brand-lightgreen transition-colors">
+                <span class="text-sm md:text-base font-bold tracking-widest uppercase">Garantir Inscrição</span>
+                <i class="ph-bold ph-arrow-up-right text-lg"></i>
+            </a>
+
+            <p class="reveal mt-8 text-[10px] text-white/40 tracking-widest uppercase">Vagas estritamente limitadas a 250 participantes.</p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white hairline-b">
+        <div class="max-w-4xl mx-auto px-6 md:px-12">
+            <h3 class="reveal text-2xl font-light tracking-tighter mb-12">Perguntas Frequentes</h3>
+            
+            <div class="flex flex-col w-full hairline-t accordion-container">
+                <div class="reveal accordion-item group cursor-pointer hairline-b">
+                    <div class="py-6 flex justify-between items-center pr-2">
+                        <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Quando e onde acontece?</h4>
+                        <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
+                    </div>
+                    <div class="accordion-content pr-12 text-brand-darkgray font-light text-sm">
+                        O evento será presencial nos dias 11 e 12 de dezembro de 2026, no Hotel Meliá Ibirapuera, em São Paulo - SP.
+                    </div>
+                </div>
+                <div class="reveal accordion-item group cursor-pointer hairline-b">
+                    <div class="py-6 flex justify-between items-center pr-2">
+                        <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Quem pode participar?</h4>
+                        <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
+                    </div>
+                    <div class="accordion-content pr-12 text-brand-darkgray font-light text-sm">
+                        Destinado a Médicos Cirurgiões Ortopedistas, Infectologistas, Residentes, Enfermeiros e Farmacêuticos hospitalares.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-brand-offwhite py-12 md:py-20">
+        <div class="max-w-[90rem] mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-12">
+            
+            <div>
+                <img src="assets/logo.png" alt="OrtoInfecto Logo" class="h-8 md:h-10 mb-6 object-contain opacity-90">
+                <div class="flex gap-4">
+                    <a href="https://instagram.com/ortoinfecto" target="_blank" class="text-brand-gray hover:text-brand-green transition-colors"><i class="ph-light ph-instagram-logo text-2xl"></i></a>
+                    <a href="#" class="text-brand-gray hover:text-brand-green transition-colors"><i class="ph-light ph-envelope-simple text-2xl"></i></a>
+                </div>
+            </div>
+
+            <div class="text-left md:text-right">
+                <p class="text-[10px] text-brand-gray uppercase tracking-widest mb-2">© 2026 OrtoInfecto. Todos os direitos reservados.</p>
+                <p class="text-[10px] text-brand-gray">Desenvolvido por DCOM Media Digital</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Fixo Mobile -->
+    <div class="fixed bottom-0 left-0 w-full p-4 z-40 md:hidden bg-gradient-to-t from-white via-white/90 to-transparent pointer-events-none">
+        <a href="#inscricao" class="pointer-events-auto flex justify-center items-center gap-2 w-full bg-brand-green text-white text-center py-4 font-bold text-[10px] uppercase tracking-widest shadow-2xl hover:bg-brand-lightgreen active:scale-95 transition-all">
+            Garantir Inscrição <i class="ph-bold ph-arrow-up-right text-base"></i>
+        </a>
+    </div>
+
+    <script>
+        // Lógica do Contador Regressivo (Alvo: 11 Dez 2026 08:00)
+        const targetDate = new Date("Dec 11, 2026 08:00:00").getTime();
+        
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) return;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("cd-days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("cd-hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("cd-mins").innerText = minutes.toString().padStart(2, '0');
+        };
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Navbar Scroll Effect e Tratamento do Logo
+        const navbar = document.getElementById('navbar');
+        const navElements = document.querySelectorAll('.nav-text-element');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'hairline-b', 'navbar-scrolled');
+                navbar.classList.remove('bg-transparent', 'py-6');
+                navbar.classList.add('py-4');
+                
+                navElements.forEach(el => {
+                    if(el.tagName === 'A' || el.tagName === 'BUTTON') {
+                        el.classList.remove('text-white', 'mix-blend-difference');
+                        el.classList.add('text-brand-black');
+                    }
+                });
+            } else {
+                navbar.classList.remove('bg-white', 'hairline-b', 'py-4', 'navbar-scrolled');
+                navbar.classList.add('bg-transparent', 'py-6');
+                
+                navElements.forEach(el => {
+                    if(el.tagName === 'A' || el.tagName === 'BUTTON') {
+                        el.classList.add('text-white', 'mix-blend-difference');
+                        el.classList.remove('text-brand-black');
+                    }
+                });
+            }
+        });
+
+        // Scroll Reveal Animations (Motion)
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Acordeão
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                const container = item.closest('.accordion-container');
+                container.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Horizontal Scroll Slider (Mouse Drag)
+        const slider = document.getElementById('slider');
+        let isDown = false;
+        let startX, scrollLeft;
+
+        if(slider) {
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                slider.classList.add('active');
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+            slider.addEventListener('mouseleave', () => { isDown = false; });
+            slider.addEventListener('mouseup', () => { isDown = false; });
+            slider.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+            });
+        }
+    </script>
+</body>
+</html>
