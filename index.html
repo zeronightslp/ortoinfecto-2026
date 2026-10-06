@@ -782,30 +782,101 @@
         </div>
     </section>
 
-    <!-- BLOCO 13 — INSCRIÇÕES / CTA PRINCIPAL -->
-    <section id="inscricao" class="py-32 md:py-48 bg-brand-black text-white text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-brand-green via-brand-black to-brand-black"></div>
+    <!-- BLOCO 13 — INSCRIÇÕES / TABELA DE VALORES -->
+    <section id="inscricao" class="py-28 md:py-40 bg-brand-black text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-green/40 via-brand-black to-brand-black pointer-events-none"></div>
         
-        <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12">
-            <span class="reveal text-xs font-bold tracking-widest uppercase text-brand-green mb-8 block">OrtoInfecto 2026 · Inscrições Oficiais</span>
+        <div class="relative z-10 max-w-6xl mx-auto px-6 md:px-12 text-center">
+            <span class="reveal text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">Inscrições Oficiais · OrtoInfecto 2026</span>
             
-            <h2 class="reveal text-5xl md:text-7xl lg:text-[6.5rem] font-light tracking-tighter leading-[0.92] mb-8">
-                Faça parte da conversa.
+            <h2 class="reveal text-4xl md:text-6xl lg:text-7xl font-light tracking-tighter leading-tight mb-6">
+                Tabela de Inscrição.
             </h2>
             
-            <p class="reveal text-lg md:text-xl font-light text-white/75 mb-14 max-w-3xl mx-auto leading-relaxed">
-                Dois dias de ciência, prática e troca direta entre os profissionais que lidam com infecções musculoesqueléticas no mais alto nível.
+            <p class="reveal text-base md:text-lg font-light text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Garanta sua participação com valores especiais de 1º Lote. Vagas rigorosamente limitadas a 250 participantes para preservar debates de alto nível.
             </p>
-            
+
+            <!-- Tabela Editorial de Valores -->
+            <div class="reveal w-full max-w-5xl mx-auto mb-10 overflow-hidden rounded-lg border border-white/10 bg-white/[0.03] backdrop-blur-sm text-left shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-white/10 bg-white/[0.04] text-[11px] uppercase tracking-widest text-white/60 font-semibold">
+                                <th class="py-5 px-6 font-semibold">Categoria</th>
+                                <th class="py-5 px-6 text-center bg-brand-green/20 text-brand-lightgreen font-bold border-x border-white/10">
+                                    <span>Até 31/10</span>
+                                    <span class="block text-[9px] text-white/70 font-normal tracking-normal normal-case">1º Lote</span>
+                                </th>
+                                <th class="py-5 px-6 text-center">
+                                    <span>Até 03/12</span>
+                                    <span class="block text-[9px] text-white/50 font-normal tracking-normal normal-case">2º Lote</span>
+                                </th>
+                                <th class="py-5 px-6 text-center text-white/50">
+                                    <span>No Local</span>
+                                    <span class="block text-[9px] text-white/40 font-normal tracking-normal normal-case">Sujeito a vagas</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5 font-light">
+                            <!-- Linha 1 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4 px-6 font-medium text-white">Médico Cirurgião / Clínico</td>
+                                <td class="py-4 px-6 text-center bg-brand-green/10 text-white font-bold border-x border-white/10">R$ 650,00</td>
+                                <td class="py-4 px-6 text-center text-white/80">R$ 770,00</td>
+                                <td class="py-4 px-6 text-center text-white/50">R$ 910,00</td>
+                            </tr>
+                            <!-- Linha 2 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4 px-6 font-medium text-white">Médico Sócio SBOT / SBI / SPI*</td>
+                                <td class="py-4 px-6 text-center bg-brand-green/10 text-white font-bold border-x border-white/10">R$ 550,00</td>
+                                <td class="py-4 px-6 text-center text-white/80">R$ 650,00</td>
+                                <td class="py-4 px-6 text-center text-white/50">R$ 770,00</td>
+                            </tr>
+                            <!-- Linha 3 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4 px-6 font-medium text-white">Médico Residente*</td>
+                                <td class="py-4 px-6 text-center bg-brand-green/10 text-white font-bold border-x border-white/10">R$ 400,00</td>
+                                <td class="py-4 px-6 text-center text-white/80">R$ 470,00</td>
+                                <td class="py-4 px-6 text-center text-white/50">R$ 550,00</td>
+                            </tr>
+                            <!-- Linha 4 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4 px-6 font-medium text-white">Profissional da Saúde Não Médicos*</td>
+                                <td class="py-4 px-6 text-center bg-brand-green/10 text-white font-bold border-x border-white/10">R$ 400,00</td>
+                                <td class="py-4 px-6 text-center text-white/80">R$ 470,00</td>
+                                <td class="py-4 px-6 text-center text-white/50">R$ 550,00</td>
+                            </tr>
+                            <!-- Linha 5 -->
+                            <tr class="hover:bg-white/[0.02] transition-colors">
+                                <td class="py-4 px-6 font-medium text-white">Estudante de Medicina*</td>
+                                <td class="py-4 px-6 text-center bg-brand-green/10 text-white font-bold border-x border-white/10">R$ 250,00</td>
+                                <td class="py-4 px-6 text-center text-white/80">R$ 280,00</td>
+                                <td class="py-4 px-6 text-center text-white/50">R$ 340,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <!-- Aviso de Critérios de Categoria -->
+                <div class="p-5 bg-white/[0.02] border-t border-white/10 flex items-start gap-3.5 text-xs text-white/75">
+                    <i class="ph-bold ph-warning-circle text-amber-400 text-lg shrink-0 mt-0.5"></i>
+                    <p class="leading-relaxed">
+                        <strong class="text-white">Importante:</strong> Ao fazer sua Inscrição, leia atentamente os critérios de categoria, para não gerar valores adicionais no local do evento! <span class="text-white/50">(*Categorias com asterisco exigem comprovação de quitação ou vínculo estudantil/residência médica no momento do credenciamento).</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botão Principal de Inscrição Oficial -->
             <div class="reveal flex flex-col sm:flex-row justify-center items-center gap-4">
-                <a href="#checkout" class="inline-flex items-center justify-center gap-4 bg-brand-green hover:bg-brand-lightgreen text-white px-10 py-6 text-sm md:text-base font-bold tracking-widest uppercase transition-all duration-300 shadow-2xl w-full sm:w-auto">
-                    <span>Inscreva-se no OrtoInfecto 2026</span>
+                <a href="https://ortoinfecto.az-eventos.com.br/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-3 bg-brand-green hover:bg-brand-lightgreen text-white px-10 py-5 text-sm md:text-base font-bold tracking-widest uppercase transition-all duration-300 shadow-2xl rounded-sm w-full sm:w-auto hover:scale-[1.02] active:scale-95">
+                    <span>Inscreva-se Agora (AZ Eventos)</span>
                     <i class="ph-bold ph-arrow-up-right text-lg"></i>
                 </a>
             </div>
 
-            <p class="reveal mt-8 text-xs text-white/50 tracking-widest uppercase">
-                ⚠️ Vagas estritamente limitadas a 250 participantes para preservar a qualidade dos debates.
+            <p class="reveal mt-6 text-xs text-white/40 tracking-wider">
+                Processamento oficial de inscrições via AZ Eventos · Plataforma segura com PIX e Cartão de Crédito
             </p>
         </div>
     </section>
@@ -856,7 +927,7 @@
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
                     <div class="accordion-content pr-12 text-brand-darkgray font-light text-sm leading-relaxed">
-                        As inscrições são processadas via checkout seguro, com opções de pagamento via Cartão de Crédito (com parcelamento) e PIX com confirmação instantânea.
+                        As inscrições são processadas diretamente no sistema oficial da <a href="https://ortoinfecto.az-eventos.com.br/" target="_blank" rel="noopener noreferrer" class="text-brand-green font-medium underline decoration-brand-green/30">AZ Eventos</a>, com opções de pagamento via Cartão de Crédito (com parcelamento) e PIX com confirmação imediata.
                     </div>
                 </div>
 
@@ -866,7 +937,7 @@
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
                     <div class="accordion-content pr-12 text-brand-darkgray font-light text-sm leading-relaxed">
-                        Sim, contamos com categorias promocionais para residentes e pós-graduandos mediante comprovação de vínculo acadêmico no momento do credenciamento.
+                        Sim! Há valores promocionais diferenciados para Médicos Sócios (SBOT/SBI/SPI), Médicos Residentes, Profissionais da Saúde Não Médicos e Estudantes de Medicina (a partir de R$ 250,00 no 1º lote), mediante comprovação de vínculo no credenciamento.
                     </div>
                 </div>
 
