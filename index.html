@@ -73,13 +73,13 @@
             transition: max-height 0.45s cubic-bezier(0, 1, 0, 1), opacity 0.45s ease-out, padding 0.45s ease;
             opacity: 0;
         }
-        .accordion-item.active .accordion-content {
+        .accordion-item.is-open .accordion-content {
             max-height: 800px;
             opacity: 1;
             padding-bottom: 1.5rem;
-            transition: max-height 0.8s ease-in-out, opacity 0.45s ease-out, padding 0.45s ease;
+            transition: max-height 0.6s ease-in-out, opacity 0.45s ease-out, padding 0.45s ease;
         }
-        .accordion-item.active .accordion-icon {
+        .accordion-item.is-open .accordion-icon {
             transform: rotate(45deg);
             color: #125b38;
         }
@@ -179,7 +179,7 @@
                         <span class="text-[11px] font-mono tracking-widest text-brand-muted group-hover:text-brand-green">06</span>
                     </a>
                     <a href="#local" class="drawer-nav-link group flex items-center justify-between py-2.5 border-b border-brand-border/40 text-brand-black hover:text-brand-green transition-colors">
-                        <span class="font-serif text-lg tracking-tight group-hover:translate-x-1 transition-transform">Local (IAMSPE)</span>
+                        <span class="font-serif text-lg tracking-tight group-hover:translate-x-1 transition-transform">Local (Meliá Ibirapuera)</span>
                         <span class="text-[11px] font-mono tracking-widest text-brand-muted group-hover:text-brand-green">07</span>
                     </a>
                     <a href="#patrocinadores" class="drawer-nav-link group flex items-center justify-between py-2.5 border-b border-brand-border/40 text-brand-black hover:text-brand-green transition-colors">
@@ -200,7 +200,7 @@
                 </a>
                 <div class="text-center space-y-1">
                     <p class="text-[11px] text-brand-muted uppercase tracking-wider font-semibold">11 e 12 de Dezembro de 2026</p>
-                    <p class="text-[11px] text-brand-muted">Auditório IAMSPE • São Paulo - SP</p>
+                    <p class="text-[11px] text-brand-muted">Hotel Meliá Ibirapuera • São Paulo - SP</p>
                     <p class="text-[10px] text-brand-muted pt-2 border-t border-brand-border/40">
                         Desenvolvido por <a href="https://verusbpo.com/" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-black hover:text-brand-green transition-colors underline decoration-brand-border">Verusbpo</a>
                     </p>
@@ -238,7 +238,7 @@
                 <div class="flex flex-col md:flex-row gap-10 md:gap-20">
                     <div class="text-white/80 font-medium tracking-widest uppercase text-xs space-y-2">
                         <p class="text-white font-semibold text-sm">11 e 12 de Dezembro de 2026</p>
-                        <p class="text-white/60">Auditório do Centro Integralidade do IAMSPE · São Paulo - SP</p>
+                        <p class="text-white/60">Hotel Meliá Ibirapuera · São Paulo - SP</p>
                     </div>
                     
                     <!-- Contador Regressivo em Tempo Real com Segundos -->
@@ -627,10 +627,10 @@
             </div>
 
             <!-- Accordion dos Temas -->
-            <div class="flex flex-col w-full hairline-t accordion-container">
+            <div class="reveal flex flex-col w-full hairline-t accordion-container">
                 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-8 flex justify-between items-center pr-4">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-8 flex justify-between items-center pr-4 cursor-pointer select-none">
                         <div class="flex items-baseline gap-6 md:gap-12">
                             <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">01</span>
                             <h4 class="text-2xl md:text-3xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Infecções Associadas a Implantes e Dinâmica de Biofilmes</h4>
@@ -642,8 +642,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-8 flex justify-between items-center pr-4">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-8 flex justify-between items-center pr-4 cursor-pointer select-none">
                         <div class="flex items-baseline gap-6 md:gap-12">
                             <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">02</span>
                             <h4 class="text-2xl md:text-3xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Osteomielites Modernas e Cobertura de Partes Moles</h4>
@@ -655,8 +655,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-8 flex justify-between items-center pr-4">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-8 flex justify-between items-center pr-4 cursor-pointer select-none">
                         <div class="flex items-baseline gap-6 md:gap-12">
                             <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">03</span>
                             <h4 class="text-2xl md:text-3xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Diagnóstico Microbiológico Avançado e Metagenômica (NGS)</h4>
@@ -668,8 +668,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-8 flex justify-between items-center pr-4">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-8 flex justify-between items-center pr-4 cursor-pointer select-none">
                         <div class="flex items-baseline gap-6 md:gap-12">
                             <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">04</span>
                             <h4 class="text-2xl md:text-3xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Terapia Antimicrobiana e Bactérias Multirresistentes</h4>
@@ -681,8 +681,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-8 flex justify-between items-center pr-4">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-8 flex justify-between items-center pr-4 cursor-pointer select-none">
                         <div class="flex items-baseline gap-6 md:gap-12">
                             <span class="text-xs font-bold tracking-widest text-brand-gray group-hover:text-brand-green transition-colors">05</span>
                             <h4 class="text-2xl md:text-3xl font-light tracking-tighter group-hover:text-brand-green transition-colors">Sessões Interativas de Discussão de Casos Clínicos</h4>
@@ -706,10 +706,10 @@
                 <div class="lg:col-span-5 reveal">
                     <span class="text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">07 / Localização</span>
                     <h2 class="text-3xl md:text-5xl font-light tracking-tighter text-brand-black leading-tight mb-6">
-                        Auditório do Centro Integralidade do IAMSPE.
+                        Hotel Meliá Ibirapuera.
                     </h2>
                     <p class="text-brand-darkgray font-light text-base mb-8">
-                        Infraestrutura hospitalar e acadêmica de referência no complexo médico da Vila Clementino, com auditório moderno e excelente acessibilidade.
+                        Infraestrutura hoteleira e centro de convenções moderno no nobre bairro de Moema. Conforto internacional, auditório com acústica de ponta, alta gastronomia e acesso privilegiado.
                     </p>
 
                     <div class="space-y-4 mb-8">
@@ -717,7 +717,7 @@
                             <i class="ph-bold ph-map-pin text-brand-green text-xl mt-0.5"></i>
                             <div>
                                 <span class="font-semibold text-sm block">Endereço Completo:</span>
-                                <span class="text-sm text-brand-darkgray font-light">Rua Pedro de Toledo, 1800 – Portão 2 - Vila Clementino, São Paulo - SP, 04039-000</span>
+                                <span class="text-sm text-brand-darkgray font-light">Av. Ibirapuera, 2534 – Moema, São Paulo - SP, CEP 04028-002</span>
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
@@ -730,20 +730,20 @@
                         <div class="flex items-start gap-3">
                             <i class="ph-bold ph-train text-brand-green text-xl mt-0.5"></i>
                             <div>
-                                <span class="font-semibold text-sm block">Mobilidade & Transporte:</span>
-                                <span class="text-sm text-brand-darkgray font-light">Em frente à Estação AACD-Servidor (Linha 5-Lilás do Metrô) e a 10 min de Congonhas.</span>
+                                <span class="font-semibold text-sm block">Mobilidade & Conexões:</span>
+                                <span class="text-sm text-brand-darkgray font-light">A poucos passos da Estação Moema (Linha 5-Lilás), ao lado do Shopping Ibirapuera e a 10 min de Congonhas.</span>
                             </div>
                         </div>
                     </div>
 
-                    <a href="https://www.google.com/maps/place/Rua+Pedro+de+Toledo,+1800+-+Vila+Clementino,+S%C3%A3o+Paulo+-+SP,+04039-000/@-23.597223,-46.65441,16z/data=!4m6!3m5!1s0x94ce5a1ec4ff4113:0xb5a294036c8c7067!8m2!3d-23.5972187!4d-46.6543876!16s%2Fg%2F11z23qdbw0?hl=pt-BR&entry=ttu" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-black text-white px-6 py-3 text-xs uppercase font-bold tracking-widest hover:bg-brand-green transition-colors">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Melia+Ibirapuera+Avenida+Ibirapuera+2534+Moema+Sao+Paulo" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-black text-white px-6 py-3 text-xs uppercase font-bold tracking-widest hover:bg-brand-green transition-colors">
                         <span>Abrir no Google Maps</span>
                         <i class="ph-bold ph-arrow-up-right"></i>
                     </a>
                 </div>
 
                 <div class="lg:col-span-7 reveal reveal-delay-1 aspect-[16/10] overflow-hidden rounded-sm shadow-xl bg-stone-100">
-                    <img src="assets/local-iamspe.png" alt="Auditório do Centro Integralidade do IAMSPE" class="w-full h-full object-cover">
+                    <img src="assets/local-melia.jpg" alt="Hotel Meliá Ibirapuera - Centro de Convenções" class="w-full h-full object-cover">
                 </div>
 
             </div>
@@ -754,74 +754,28 @@
     <section id="patrocinadores" class="py-24 md:py-32 bg-white hairline-t">
         <div class="max-w-[90rem] mx-auto px-6 md:px-12 text-center">
             
-            <!-- Patrocinadores -->
-            <div class="mb-20">
-                <span class="reveal text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">08 / Apoio e Tecnologia</span>
+            <div class="max-w-3xl mx-auto">
+                <span class="reveal text-xs font-bold tracking-widest uppercase text-brand-green mb-4 block">08 / Parcerias & Apoio</span>
                 <h3 class="reveal text-3xl md:text-5xl font-light tracking-tighter text-brand-black mb-6">
-                    Patrocinadores
+                    Patrocinadores e Apoio Institucional
                 </h3>
-                <p class="reveal text-brand-darkgray font-light text-base max-w-2xl mx-auto mb-14">
-                    Empresas e tecnologias biomédicas de vanguarda que apoiam a disseminação do conhecimento e a inovação no tratamento de infecções musculoesqueléticas.
+                <p class="reveal text-brand-darkgray font-light text-base mb-12">
+                    Empresas de vanguarda biotecnológica e sociedades médicas dedicadas ao avanço científico e à excelência no tratamento das infecções musculoesqueléticas.
                 </p>
                 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center justify-items-center max-w-6xl mx-auto">
-                    
-                    <!-- Biocomposites -->
-                    <div class="reveal p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/60 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group shadow-sm hover:shadow-md">
-                        <img src="assets/patrocinio-biocomposites.png" alt="Biocomposites" class="max-h-11 md:max-h-13 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+                <!-- Card Informativo de Formalização dos Acordos e Contratos -->
+                <div class="reveal p-8 md:p-12 bg-brand-offwhite border border-brand-black/10 rounded-sm text-center shadow-sm">
+                    <div class="w-12 h-12 rounded-full bg-brand-green/10 text-brand-green flex items-center justify-center mx-auto mb-5">
+                        <i class="ph-light ph-handshake text-2xl"></i>
                     </div>
-
-                    <!-- LASFORLIFE -->
-                    <div class="reveal reveal-delay-1 p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/60 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group shadow-sm hover:shadow-md">
-                        <img src="assets/patrocinio-lasforlife.png" alt="LASFORLIFE" class="max-h-11 md:max-h-13 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                    <!-- Mundipharma -->
-                    <div class="reveal reveal-delay-2 p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/60 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group shadow-sm hover:shadow-md">
-                        <img src="assets/patrocinio-mundipharma.png" alt="Mundipharma" class="max-h-11 md:max-h-13 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                    <!-- bioMérieux -->
-                    <div class="reveal reveal-delay-3 p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/60 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group shadow-sm hover:shadow-md">
-                        <img src="assets/patrocinio-biomerieux.png" alt="bioMérieux" class="max-h-13 md:max-h-15 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                    <!-- MEDI SET -->
-                    <div class="reveal p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/60 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group shadow-sm hover:shadow-md">
-                        <img src="assets/patrocinio-mediset.png" alt="MEDI SET" class="max-h-11 md:max-h-13 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                    <!-- OSSIS MEDICAL -->
-                    <div class="reveal reveal-delay-1 p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/60 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group shadow-sm hover:shadow-md">
-                        <img src="assets/patrocinio-ossis.png" alt="OSSIS Medical" class="max-h-11 md:max-h-13 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Apoio Institucional (Sociedades Médicas) -->
-            <div class="pt-12 border-t border-brand-black/10 max-w-4xl mx-auto">
-                <span class="reveal text-xs font-bold tracking-widest uppercase text-brand-gray mb-8 block">
-                    Apoio Institucional
-                </span>
-
-                <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 items-center justify-items-center">
-                    
-                    <!-- SBOT -->
-                    <div class="reveal p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/40 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group">
-                        <img src="assets/apoio-sbot.png" alt="SBOT - Sociedade Brasileira de Ortopedia e Traumatologia" class="max-h-12 md:max-h-14 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                    <!-- SBI -->
-                    <div class="reveal reveal-delay-1 p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/40 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group">
-                        <img src="assets/apoio-sbi.png" alt="SBI - Sociedade Brasileira de Infectologia" class="max-h-12 md:max-h-14 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
-                    <!-- SPI -->
-                    <div class="reveal reveal-delay-2 p-6 flex items-center justify-center h-24 w-full bg-brand-offwhite/40 border border-brand-black/5 rounded-sm hover:border-brand-green transition-all duration-300 group">
-                        <img src="assets/apoio-spi.png" alt="SPI - Sociedade Paulista de Infectologia" class="max-h-12 md:max-h-14 max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                    </div>
-
+                    <h4 class="font-serif text-xl md:text-2xl text-brand-black mb-3">Parcerias em fase de confirmação oficial</h4>
+                    <p class="text-brand-darkgray font-light text-sm max-w-xl mx-auto mb-6 leading-relaxed">
+                        Os logos dos patrocinadores confirmados e apoios das sociedades médicas desta edição serão divulgados oficialmente nos canais do OrtoInfecto assim que as formalizações contratuais forem concluídas.
+                    </p>
+                    <a href="https://www.instagram.com/ortoinfecto/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-brand-black hover:text-brand-green transition-colors border-b border-brand-black/20 pb-1">
+                        <span>Acompanhe as novidades oficiais</span>
+                        <i class="ph-bold ph-arrow-up-right"></i>
+                    </a>
                 </div>
             </div>
 
@@ -864,20 +818,20 @@
                 <h3 class="text-3xl md:text-4xl font-light tracking-tighter text-brand-black">Perguntas Frequentes</h3>
             </div>
             
-            <div class="flex flex-col w-full hairline-t accordion-container">
+            <div class="reveal flex flex-col w-full hairline-t accordion-container">
                 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-6 flex justify-between items-center pr-2">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-6 flex justify-between items-center pr-2 cursor-pointer select-none">
                         <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Quando e onde será realizado o OrtoInfecto 2026?</h4>
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
                     <div class="accordion-content pr-12 text-brand-darkgray font-light text-sm leading-relaxed">
-                        O evento será 100% presencial nos dias <strong>11 e 12 de dezembro de 2026</strong>, no <strong>Auditório do Centro Integralidade do IAMSPE</strong> (Rua Pedro de Toledo, 1800 – Portão 2 - Vila Clementino, São Paulo - SP).
+                        O evento será 100% presencial nos dias <strong>11 e 12 de dezembro de 2026</strong>, no <strong>Hotel Meliá Ibirapuera</strong> (Av. Ibirapuera, 2534 – Moema, São Paulo - SP, a poucos passos do Metrô Moema).
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-6 flex justify-between items-center pr-2">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-6 flex justify-between items-center pr-2 cursor-pointer select-none">
                         <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Quem pode participar do evento?</h4>
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
@@ -886,8 +840,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-6 flex justify-between items-center pr-2">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-6 flex justify-between items-center pr-2 cursor-pointer select-none">
                         <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">O evento emite certificado oficial de participação?</h4>
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
@@ -896,8 +850,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-6 flex justify-between items-center pr-2">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-6 flex justify-between items-center pr-2 cursor-pointer select-none">
                         <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Quais são as formas de pagamento disponíveis?</h4>
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
@@ -906,8 +860,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-6 flex justify-between items-center pr-2">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-6 flex justify-between items-center pr-2 cursor-pointer select-none">
                         <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Existe valor especial para Residentes e Acadêmicos?</h4>
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
@@ -916,8 +870,8 @@
                     </div>
                 </div>
 
-                <div class="reveal accordion-item group cursor-pointer hairline-b">
-                    <div class="py-6 flex justify-between items-center pr-2">
+                <div class="accordion-item group hairline-b transition-colors">
+                    <div class="accordion-header py-6 flex justify-between items-center pr-2 cursor-pointer select-none">
                         <h4 class="text-lg font-light tracking-tight group-hover:text-brand-green transition-colors">Como funciona a discussão de casos clínicos?</h4>
                         <i class="ph-light ph-plus text-xl accordion-icon transition-all duration-300 text-brand-gray group-hover:text-brand-green"></i>
                     </div>
@@ -948,7 +902,7 @@
 
             <div class="text-left md:text-right space-y-1.5">
                 <p class="text-[11px] text-brand-gray uppercase tracking-widest">© 2026 OrtoInfecto. Todos os direitos reservados.</p>
-                <p class="text-[11px] text-brand-gray">11 e 12 de Dezembro de 2026 · Auditório do Centro Integralidade do IAMSPE · São Paulo</p>
+                <p class="text-[11px] text-brand-gray">11 e 12 de Dezembro de 2026 · Hotel Meliá Ibirapuera · São Paulo</p>
                 <p class="text-[11px] text-brand-darkgray pt-1">
                     Desenvolvido por <a href="https://verusbpo.com/" target="_blank" rel="noopener noreferrer" class="font-medium text-brand-black hover:text-brand-green transition-colors underline decoration-brand-border underline-offset-4">Verusbpo</a>.
                 </p>
@@ -1086,17 +1040,24 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
 
-        // Accordion
-        document.querySelectorAll('.accordion-item').forEach(item => {
-            item.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
+        // Accordion (Sessão 06 Temas & FAQ)
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const item = header.closest('.accordion-item');
+                if (!item) return;
+                const isOpen = item.classList.contains('is-open');
                 
                 const container = item.closest('.accordion-container');
-                container.querySelectorAll('.accordion-item').forEach(otherItem => {
-                    otherItem.classList.remove('active');
-                });
+                if (container) {
+                    container.querySelectorAll('.accordion-item').forEach(otherItem => {
+                        otherItem.classList.remove('is-open');
+                    });
+                }
 
-                if (!isActive) item.classList.add('active');
+                if (!isOpen) {
+                    item.classList.add('is-open');
+                }
             });
         });
 
